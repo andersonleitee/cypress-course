@@ -9,7 +9,7 @@ describe('Locator', ()=>{
         cy.reload();
     })
 
-    it('locator', ()=>{
+    it('JQuery selector', ()=>{
         
     })
 
