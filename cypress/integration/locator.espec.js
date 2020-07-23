@@ -10,7 +10,7 @@ describe('Locator', ()=>{
     })
 
     it('JQuery selector', ()=>{
-        
+        cy.get('table#tabelaUsuarios tbody > tr > td:eq(0)').should('contain', 'Francisco')
     })
 
 })
