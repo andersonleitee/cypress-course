@@ -10,7 +10,11 @@ describe('Locator', ()=>{
     })
 
     it('JQuery selector', ()=>{
-        
+        cy.get('table#tabelaUsuarios tbody tr td:eq(6) input').type('Anderson')
+    })
+
+    it ('Using xpath', ()=>{
+        cy.xpath('//input')
     })
 
 })
