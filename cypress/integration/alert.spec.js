@@ -9,11 +9,13 @@ describe('work with alert', ()=>{
         cy.reload();
     })
 
-    it('Alert', ()=>{
-        cy.get('#alert').click()
-        cy.on('window:alert', msg =>{  // cy.on captura eventos na tela. msg será uma string
-            expect(msg).to.be.equal('Alert Simples') // Assertiva para verificar se a msg realmente esta correta
-        })
+    it.only('Alert', ()=>{
+        // cy.get('#alert').click()
+        // cy.on('window:alert', msg =>{  // cy.on captura eventos na tela. msg será uma string
+        //     expect(msg).to.be.equal('Alert Simples') // Assertiva para verificar se a msg realmente esta correta
+        // })
+
+        cy.clickAlert('#alert','Alert Simples')
     })
 
     it('Alert com Mock', ()=>{
@@ -50,7 +52,7 @@ describe('work with alert', ()=>{
         cy.get('#confirm').click()
     })
 
-    it.only('Prompt', ()=>{
+    it('Prompt', ()=>{
         cy.window().then(win =>{
             cy.stub(win,"prompt").returns('42')
         })
